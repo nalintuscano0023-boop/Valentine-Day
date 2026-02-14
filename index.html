@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💖 Valentine Surprise | Nalin Tuscano</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  
+  <div class="animated-bg"></div>
+
+  
+  <canvas id="heartsCanvas"></canvas>
+
+  
+  <header class="topbar glass">
+    <div class="brand">
+      <div class="logo">💘</div>
+      <div>
+        <h1 class="brand-title">Valentine Surprise</h1>
+        <p class="brand-sub">Made with ❤️ by <b>Nalin Tuscano</b></p>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <button id="themeBtn" class="icon-btn" title="Theme">🌙</button>
+      <button id="musicBtn" class="icon-btn" title="Music">🎵</button>
+      <button id="shareBtn" class="icon-btn" title="Share">📤</button>
+    </div>
+  </header>
+
+  
+  <nav class="tabs glass">
+    <button class="tab active" data-tab="proposal">💖 Proposal</button>
+    <button class="tab" data-tab="letter">💌 Love Letter</button>
+    <button class="tab" data-tab="gallery">🖼️ Gallery</button>
+    <button class="tab" data-tab="compatibility">💞 Compatibility</button>
+    <button class="tab" data-tab="scratch">🎁 Scratch Surprise</button>
+  </nav>
+
+  
+  <main class="container">
+
+    
+    <section id="proposal" class="panel glass active">
+      <div class="panel-header">
+        <h2>🌹 Will you be my Valentine?</h2>
+        <p class="muted">Enter your name and choose your destiny 😆💖</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card soft">
+          <h3>💌 Your Name</h3>
+          <p class="muted small">This name will appear in the surprise message.</p>
+
+          <div class="inline">
+            <input id="nameInput" type="text" placeholder="Enter your name..." />
+            <button id="saveNameBtn" class="btn primary">Save</button>
+          </div>
+
+          <div class="live-preview">
+            <span class="badge">Preview</span>
+            <h1 class="hero-title">Hey <span id="crushName">My Love</span> 💖</h1>
+            <p class="muted">I made something special for you ✨</p>
+          </div>
+        </div>
+
+        <div class="card soft">
+          <h3>😍 Choose</h3>
+          <p class="muted small">Try pressing NO… if you can 😏</p>
+
+          <div class="btn-row">
+            <button id="yesBtn" class="btn yes big">YES 😍</button>
+            <button id="noBtn" class="btn no big">NO 🙄</button>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-num" id="noDodges">0</div>
+              <div class="stat-label">NO Dodges</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" id="yesClicks">0</div>
+              <div class="stat-label">YES Clicks</div>
+            </div>
+          </div>
+
+          <div class="tip">💡 Tip: Hover on NO button, it will escape 😆</div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="letter" class="panel glass">
+      <div class="panel-header">
+        <h2>💌 Love Letter Generator</h2>
+        <p class="muted">Generate a romantic letter with typewriter effect + save it 💖</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card soft">
+          <h3>📝 Inputs</h3>
+
+          <div class="form">
+            <div class="field">
+              <label>Your Name</label>
+              <input id="yourName" type="text" placeholder="Enter Your Name" />
+            </div>
+
+            <div class="field">
+              <label>Partner Name</label>
+              <input id="partnerName" type="text" placeholder="Her / His Name" />
+            </div>
+
+            <div class="field">
+              <label>Style</label>
+              <select id="letterStyle">
+                <option value="romantic">Romantic 💖</option>
+                <option value="funny">Funny 😆</option>
+                <option value="short">Short & Sweet 🍫</option>
+                <option value="poetic">Poetic 🌙</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Special Word</label>
+              <input id="specialWord" type="text" placeholder="Forever / Always / Babe..." />
+            </div>
+
+            <div class="actions-wrap">
+              <button id="generateBtn" class="btn primary">Generate ✨</button>
+              <button id="copyBtn" class="btn ghost">Copy 📋</button>
+              <button id="downloadBtn" class="btn ghost">Download ⬇️</button>
+              <button id="saveLetterBtn" class="btn success">Save 💾</button>
+              <button id="clearBtn" class="btn danger">Clear</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card soft">
+          <h3>💝 Output</h3>
+          <p class="muted small">Typewriter animation + glow effect.</p>
+
+          <div class="output-box">
+            <pre id="letterOutput">Your love letter will appear here 💕</pre>
+          </div>
+
+          <div class="saved-box">
+            <div class="saved-header">
+              <h4>📌 Saved Letter</h4>
+              <button id="clearSavedBtn" class="btn tiny ghost">Clear Saved</button>
+            </div>
+            <pre id="savedLetter">No saved letter yet 💌</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="gallery" class="panel glass">
+      <div class="panel-header">
+        <h2>🖼️ Mini Gallery</h2>
+        <p class="muted">Click images for full view 💖</p>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="g-item" data-full="https://picsum.photos/900/700?random=1">
+          <img src="https://picsum.photos/400/300?random=1" alt="gallery">
+          <span>💖 Moment 1</span>
+        </div>
+        <div class="g-item" data-full="https://picsum.photos/900/700?random=2">
+          <img src="https://picsum.photos/400/300?random=2" alt="gallery">
+          <span>🌹 Moment 2</span>
+        </div>
+        <div class="g-item" data-full="https://picsum.photos/900/700?random=3">
+          <img src="https://picsum.photos/400/300?random=3" alt="gallery">
+          <span>🍫 Moment 3</span>
+        </div>
+        <div class="g-item" data-full="https://picsum.photos/900/700?random=4">
+          <img src="https://picsum.photos/400/300?random=4" alt="gallery">
+          <span>💌 Moment 4</span>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="compatibility" class="panel glass">
+      <div class="panel-header">
+        <h2>💞 Love Compatibility Test</h2>
+        <p class="muted">Enter two names and check your love percentage 😍✨</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card soft">
+          <h3>❤️ Enter Names</h3>
+
+          <div class="form">
+            <div class="field">
+              <label>Name 1</label>
+              <input id="compName1" type="text" placeholder="Your Name" />
+            </div>
+
+            <div class="field">
+              <label>Name 2</label>
+              <input id="compName2" type="text" placeholder="Partner Name" />
+            </div>
+
+            <div class="actions-wrap">
+              <button id="checkLoveBtn" class="btn primary">Check Love % 💘</button>
+              <button id="resetLoveBtn" class="btn danger">Reset</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card soft">
+          <h3>💖 Result</h3>
+          <p class="muted small">Animated progress + saved last result.</p>
+
+          <div class="love-result">
+            <div class="love-percent" id="lovePercent">0%</div>
+            <div class="love-bar">
+              <div class="love-fill" id="loveFill"></div>
+            </div>
+            <div class="love-msg" id="loveMsg">Enter names to check 💌</div>
+          </div>
+
+          <div class="saved-box">
+            <div class="saved-header">
+              <h4>📌 Last Saved Result</h4>
+              <button id="clearLoveSavedBtn" class="btn tiny ghost">Clear</button>
+            </div>
+            <pre id="savedLoveResult">No saved result yet 💞</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="scratch" class="panel glass">
+      <div class="panel-header">
+        <h2>🎁 Scratch Card Surprise Reveal</h2>
+        <p class="muted">Scratch the card to reveal your Valentine surprise 💖✨</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card soft">
+          <h3>💝 Hidden Surprise</h3>
+          <p class="muted small">Use mouse / touch to scratch.</p>
+
+          <div class="scratch-wrap">
+            <div class="scratch-message" id="scratchMessage">
+              💌 Surprise: You are my favorite person, always 💖🌹
+            </div>
+            <canvas id="scratchCanvas"></canvas>
+          </div>
+
+          <div class="actions-wrap" style="margin-top: 12px;">
+            <button id="resetScratchBtn" class="btn primary">Reset Scratch 🔄</button>
+          </div>
+        </div>
+
+        <div class="card soft">
+          <h3>✨ Scratch Progress</h3>
+          <p class="muted small">Reveals automatically when enough scratched.</p>
+
+          <div class="love-result">
+            <div class="love-percent" id="scratchPercent">0%</div>
+            <div class="love-bar">
+              <div class="love-fill" id="scratchFill"></div>
+            </div>
+            <div class="love-msg" id="scratchMsg">Start scratching 🎁</div>
+          </div>
+
+          <div class="saved-box">
+            <div class="saved-header">
+              <h4>💖 Final Reveal</h4>
+            </div>
+            <pre id="scratchFinalText">Not revealed yet 💌</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  
+  <div id="imgModal" class="modal hidden">
+    <div class="modal-card glass">
+      <img id="modalImg" src="" alt="preview"/>
+      <button id="closeImgModal" class="btn primary">Close</button>
+    </div>
+  </div>
+
+  
+  <div id="modal" class="modal hidden">
+    <div class="modal-card glass">
+      <h2 id="modalTitle">💝 YAYYYYY!</h2>
+      <p id="modalText">You just made my day ❤️</p>
+      <div class="modal-actions">
+        <button id="closeModalBtn" class="btn primary">Aww Okay 🥺</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+  </audio>
+
+  
+  <audio id="yesSfx">
+    <source src="https://www.soundjay.com/buttons/sounds/button-09.mp3" type="audio/mpeg">
+  </audio>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
